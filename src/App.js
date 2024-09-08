@@ -1,8 +1,9 @@
+import ExpenseItem from "./components/ExpenseItem";
 
 function App() {
   return (
     <div>
-      <h2>Hello world</h2>
+      <ExpenseItem></ExpenseItem>
       <p>Eemil Luodes / VAMK / BIT</p>
     </div>
   );
