@@ -9,6 +9,9 @@ const ExpenseForm = (props) => {
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
+    // event = tapahtuma, eli esim input change
+    // event.target = tapahtuman kohde eli tässä tapauksessa input field
+    // value = input fieldin current value
   };
   const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
@@ -21,18 +24,24 @@ const ExpenseForm = (props) => {
     event.preventDefault();
 
     const expenseData = {
+      //luo objektin käyttäjän syötteestä
       title: enteredTitle,
       amount: enteredAmount,
       date: new Date(enteredDate),
     };
     // console.log(expenseData);
+
+    //lähettää expenseData objektin propsina parentille(NewExpense)
+    //onSaveExpenseData on taas funktiopropsi joka tulee parentilta childille(ExpenseForm)
     props.onSaveExpenseData(expenseData);
+    //tyhjätään lomake lähetyksen jälkeen
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
   };
 
   return (
+    //kun lomake lähetetään funktio kutsutaan
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">

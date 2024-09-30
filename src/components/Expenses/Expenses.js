@@ -4,6 +4,7 @@ import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 
 const Expenses = (props) => {
+  //datakokonaisuus jaetaan item komponentille jotta saadaan lajiteltua data ryhmiin
   return (
     <Card className="expenses">
       <ExpenseItem

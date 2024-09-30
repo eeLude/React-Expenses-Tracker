@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; //librarystä importattu spessufunktio
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
-  const [title, setTitle] = useState(props.title);
+  const [title, setTitle] = useState(props.title); // mahdollistaa titlen vaihtumisen
 
   const clickHandler = () => {
+    //muuttaa titlen ja logittaa kutsuttaessa
     setTitle("Updated!");
     console.log(title);
   };
 
   return (
+    // luo "raamit" käyttäen muita komponentteja apuna johon data liitetään
     <Card className="expense-item">
       <ExpenseDate date={props.date} />
       <div className="expense-item__description">
