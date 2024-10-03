@@ -32,7 +32,7 @@ const ExpenseForm = (props) => {
     // console.log(expenseData);
 
     //lähettää expenseData objektin propsina parentille(NewExpense)
-    //onSaveExpenseData on taas funktiopropsi joka tulee parentilta childille(ExpenseForm)
+    //data siirtyy propsin kautta SaveExpenseDataHandlerille
     props.onSaveExpenseData(expenseData);
     //tyhjätään lomake lähetyksen jälkeen
     setEnteredTitle("");
