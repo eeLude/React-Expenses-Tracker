@@ -18,6 +18,7 @@ const Expenses = (props) => {
       <ExpensesFilter selected={filteredYear} onChangeFilter={filterHandler} />
       {props.items.map((expense) => (
         <ExpenseItem
+          key={expense.id} //erottaa komponentit paremmin toisistaan ohjelmalle
           title={expense.title}
           amount={expense.amount}
           date={expense.date}
