@@ -9,14 +9,22 @@ const Expenses = (props) => {
   const [filteredYear, setFilteredYear] = useState("2022");
   const filterHandler = (selectedYear) => {
     //valikon valintatieto on nyt selectedYearissa
-    setFilteredYear(selectedYear); //valintatieto siirtyy useStateen
+    setFilteredYear(selectedYear); //valittu vuosi päivittyy tilaan
   };
-  //datakokonaisuus jaetaan item komponentille jotta saadaan lajiteltua data ryhmiin
+
+  //taulukko filtteröidään läpi objekti kerrallaan
+  const filteredExpenses = props.items.filter((expense) => {
+    //filtteröidään objektit joiden vuosi täsmää valitun vuoden kanssa
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
+
   return (
     <Card className="expenses">
-      {/*Renderöi filter valikon. valikon valinta(event value) siirtyy propsina filterHandlerille */}
+      {/*Renderöi filter valikon. valikon valinta(event value) siirtyy propsina(onChangeFilter) filterHandlerille */}
       <ExpensesFilter selected={filteredYear} onChangeFilter={filterHandler} />
-      {props.items.map((expense) => (
+
+      {/*renderöi ExpenseItem-komponentille yhden objektin kerrallaan taulukosta*/}
+      {filteredExpenses.map((expense) => (
         <ExpenseItem
           key={expense.id} //erottaa komponentit paremmin toisistaan ohjelmalle
           title={expense.title}
