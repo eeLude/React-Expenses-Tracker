@@ -18,22 +18,32 @@ const Expenses = (props) => {
     return expense.date.getFullYear().toString() === filteredYear;
   });
 
+  let expensesContent = <p>No expenses found.</p>; //muuttuja, josta data tuodaan sivulle
+
+  if (filteredExpenses.length > 0) {
+    //jos filtteröityä dataa löytyy, tallenetaan content muuttujaan
+    expensesContent = filteredExpenses.map((expense) => (
+      <ExpenseItem
+        key={expense.id} // Unique key for each ExpenseItem
+        title={expense.title}
+        amount={expense.amount}
+        date={expense.date}
+      />
+    ));
+  }
+
   return (
     <Card className="expenses">
-      {/*Renderöi filter valikon. valikon valinta(event value) siirtyy propsina(onChangeFilter) filterHandlerille */}
+      {/* renderöi filter drop down valikon */}
       <ExpensesFilter selected={filteredYear} onChangeFilter={filterHandler} />
-
-      {/*renderöi ExpenseItem-komponentille yhden objektin kerrallaan taulukosta*/}
-      {filteredExpenses.map((expense) => (
-        <ExpenseItem
-          key={expense.id} //erottaa komponentit paremmin toisistaan ohjelmalle
-          title={expense.title}
-          amount={expense.amount}
-          date={expense.date}
-        />
-      ))}
+      {expensesContent} {/*näyttää datan sivulla*/}
+      {/* VAIHTOEHTOISET LOGIIKAT: */}
+      {/* {filteredExpenses.length === 0 && <p>No expenses found</p>}
+      {filteredExpenses.length > 0 && */}
+      {/*  {filteredExpenses.length === 0 ? (
+        <p>No expenses found.</p>
+      ) : ( */}
     </Card>
   );
 };
-
 export default Expenses;
