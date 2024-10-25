@@ -1,4 +1,3 @@
-import React, { useState } from "react"; //librarystä importattu spessufunktio
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 import "./ExpenseItem.css";
@@ -6,6 +5,7 @@ import "./ExpenseItem.css";
 const ExpenseItem = (props) => {
   return (
     // luo "raamit" käyttäen muita komponentteja apuna johon data liitetään
+
     <Card className="expense-item">
       <ExpenseDate date={props.date} />
       <div className="expense-item__description">
