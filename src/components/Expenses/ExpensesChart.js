@@ -2,7 +2,9 @@ import React from "react";
 import Chart from "../Chart/Chart";
 
 const ExpensesChart = (props) => {
+  //kokoaa taulukon jossa kuukausittaiset arvot
   const chartDataPoints = [
+    //dataobjekti kuukausille
     { label: "Jan", value: 0 },
     { label: "Feb", value: 0 },
     { label: "Mar", value: 0 },
@@ -17,9 +19,10 @@ const ExpensesChart = (props) => {
     { label: "Dec", value: 0 },
   ];
   for (const expense of props.expenses) {
-    const expenseMonth = expense.date.getMonth();
-    chartDataPoints[expenseMonth].value += expense.amount;
+    //expense taulukko käydään läpi
+    const expenseMonth = expense.date.getMonth(); //tallennetaan taulukosta kuukaudet muuttujaan
+    chartDataPoints[expenseMonth].value += expense.amount; //lisää kulun arvon charttiin
   }
-  return <Chart dataPoints={chartDataPoints} />;
+  return <Chart dataPoints={chartDataPoints} />; //data lähetetään propsina
 };
 export default ExpensesChart;
