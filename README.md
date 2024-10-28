@@ -20,7 +20,8 @@ A simple and interactive expense tracker application built with React, allowing 
 - Responsive design with a clean and modern UI.
 
 ## Demo
-Check out the live version of the app: [HERE](https://react-expenses-tracker-ngq3kf82s-eeludes-projects.vercel.app/)
+
+Check out the live version of the app: [HERE](https://react-expenses-tracker-gray.vercel.app/)
 
 
 
