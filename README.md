@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# Expense Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple and interactive expense tracker application built with React, allowing users to add, filter, and view expenses by year, with visual representations of expenses over time.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Features](#features)
+- [Demo](#demo)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Component Hierarchy](#component-hierarchy)
+- [Technologies Used](#technologies-used)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Add expenses with a title, amount, and date.
+- Filter expenses by year.
+- View expenses displayed by month in a chart.
+- Responsive design with a clean and modern UI.
 
-### `npm test`
+## Demo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![project](https://github.com/user-attachments/assets/a5381cf3-51e1-4875-b584-67c701ede73e)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+https://react-expenses-tracker-ngq3kf82s-eeludes-projects.vercel.app/
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To get a local copy up and running, follow these simple steps:
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Make sure you have Node.js and npm installed.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Steps
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/expense-tracker.git
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Navigate to the project directory:
+   ```bash
+   cd expense-tracker
+   ```
 
-## Learn More
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Start the development server:
+   ```bash
+   npm start
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. Open your browser and go to `http://localhost:3000`.
 
-### Code Splitting
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. **Add a New Expense**: Enter the title, amount, and date for a new expense, then click "Add Expense".
+2. **Filter Expenses by Year**: Use the dropdown to select the year you want to filter expenses by.
+3. **View Monthly Expense Chart**: See a bar chart displaying the total expenses for each month of the selected year.
 
-### Analyzing the Bundle Size
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<img width="2819" alt="react_ui_component_graph" src="https://github.com/user-attachments/assets/c493e551-2209-4459-a8c1-6cb4d6241078">
 
-### Making a Progressive Web App
+## Component Hierarchy
+<img width="1334" alt="react_component_graph" src="https://github.com/user-attachments/assets/b5f8efe2-e741-4d9f-a22a-d2ad4daf7912">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+**Data Flow:**
+- `App` manages the state for expenses and passes expense data down to child components.
+- `NewExpense` passes new expense data up to `App` to add it to the expenses array.
+- `ExpensesFilter` passes the selected year up to `Expenses`, which then filters the expenses accordingly.
+- `ExpensesChart` receives filtered expense data and visualizes it with `Chart` and `ChartBar`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Technologies Used
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **React** - For building UI components and managing state.
+- **CSS** - For styling components.
+- **JavaScript** - For component logic and event handling.
