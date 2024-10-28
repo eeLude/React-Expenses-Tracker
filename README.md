@@ -2,7 +2,7 @@
 
 A simple and interactive expense tracker application built with React, allowing users to add, filter, and view expenses by year, with visual representations of expenses over time.
 
-> **Note:** This project was developed with guidance and template code provided by the course, so some portions of the code may not be fully my own work.
+> **Note:** This project was developed for a school course, so some portions of the code may not be fully my own work.
 ## Table of Contents
 
 - [Features](#features)
