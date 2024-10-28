@@ -2,9 +2,6 @@
 
 A simple and interactive expense tracker application built with React, allowing users to add, filter, and view expenses by year, with visual representations of expenses over time.
 
-> **Note:** This project was developed for a school course, so some portions of the code may not be fully my own work.
-## Table of Contents
-
 - [Features](#features)
 - [Demo](#demo)
 - [Installation](#installation)
@@ -23,7 +20,10 @@ A simple and interactive expense tracker application built with React, allowing 
 - Responsive design with a clean and modern UI.
 
 ## Demo
-Check out the live version of the app: [DEMO HERE](https://react-expenses-tracker-ngq3kf82s-eeludes-projects.vercel.app/)
+Check out the live version of the app: [HERE]
+
+
+(https://react-expenses-tracker-ngq3kf82s-eeludes-projects.vercel.app/)
 ![project](https://github.com/user-attachments/assets/a5381cf3-51e1-4875-b584-67c701ede73e)
 
 
