@@ -3,21 +3,23 @@ import "./NewExpense.css";
 import ExpenseForm from "./ExpenseForm";
 
 const NewExpense = (props) => {
-  const [isEditing, setIsEditing] = useState(false); //input field tilamuuttuja
+  const [isEditing, setIsEditing] = useState(false); //state hook for newexpenseform
 
+  //eventhandler to set editing state to true
   const startEditingHandler = () => {
-    //
     setIsEditing(true);
   };
 
+  //eventhandler to set editing state to false
   const stopEditingHandler = () => {
     setIsEditing(false);
   };
 
+  //eventhandler to render user input
   const SaveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
-      id: Math.random().toString(),
+      id: Math.random().toString(), //add id to data object
     };
     props.onAddExpense(expenseData);
   };

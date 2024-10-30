@@ -3,53 +3,53 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = (props) => {
+  //state hooks for the form fields
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
 
+  //event handlers for the form fields
   const titleChangeHandler = (event) => {
-    setEnteredTitle(event.target.value);
-    // event = tapahtuma, eli esim input change
-    // event.target = tapahtuman kohde eli tässä tapauksessa input field
-    // value = input fieldin current value
+    setEnteredTitle(event.target.value); //sets the entered title to the state
+   
   };
   const amountChangeHandler = (event) => {
-    setEnteredAmount(event.target.value);
+    setEnteredAmount(event.target.value); //sets the entered amount to the state
   };
   const dateChangeHandler = (event) => {
-    setEnteredDate(event.target.value);
+    setEnteredDate(event.target.value); //sets the entered date to the state
   };
 
+  //event handler for the form submission
   const submitHandler = (event) => {
-    event.preventDefault();
+    event.preventDefault(); //prevents the page from reloading
 
+    //object to store the form data
     const expenseData = {
-      //luo objektin käyttäjän syötteestä
       title: enteredTitle,
       amount: +enteredAmount,
       date: new Date(enteredDate),
     };
-    // console.log(expenseData);
-
-    //lähettää expenseData objektin propsina parentille(NewExpense)
-    //data siirtyy propsin kautta SaveExpenseDataHandlerille
+   
+    //calls the function passed as props from NewExpense.js
     props.onSaveExpenseData(expenseData);
-    //tyhjätään lomake lähetyksen jälkeen
+
+    //clears the form fields
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
   };
 
-  return (
-    //kun lomake lähetetään funktio kutsutaan
+  //renders the form
+  return ( 
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input
+          <input 
             type="text"
-            value={enteredTitle}
-            onChange={titleChangeHandler}
+            value={enteredTitle} 
+            onChange={titleChangeHandler} //calls the titleChangeHandler function when the input changes
           />
         </div>
         <div className="new-expense__control">
@@ -75,7 +75,7 @@ const ExpenseForm = (props) => {
       </div>
       <div className="new-expense__actions">
         <button type="submit">Add Expenses</button>
-        <button type="button" onClick={props.onCancel}>
+        <button type="button" onClick={props.onCancel}> 
           Cancel
         </button>
       </div>

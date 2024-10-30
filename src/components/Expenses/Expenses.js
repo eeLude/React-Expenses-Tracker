@@ -6,19 +6,22 @@ import ExpensesList from "./ExpensesList";
 import ExpensesChart from "./ExpensesChart";
 
 const Expenses = (props) => {
-  const [filteredYear, setFilteredYear] = useState("2022");
+  
+  //state hook to store the selected year
+  const [filteredYear, setFilteredYear] = useState("2022"); 
+
+  //event handler for the filter drop down
   const filterHandler = (selectedYear) => {
-    //valikon valintatieto on nyt selectedYearissa
-    setFilteredYear(selectedYear); //valittu vuosi päivittyy tilaan
+    setFilteredYear(selectedYear); //sets the selected year to the state, passed as props from ExpensesFilter
   };
 
-  //taulukko filtteröidään läpi objekti kerrallaan
+  //filters the expenses based on the selected year
   const filteredExpenses = props.items.filter((expense) => {
-    //filtteröidään objektit joiden vuosi täsmää valitun vuoden kanssa
+    //returns the expenses with the same year as the selected year
     return expense.date.getFullYear().toString() === filteredYear;
   });
 
-  return (
+  return ( //renders the filter drop down, chart, and list of expenses
     <Card className="expenses">
       {/* renderöi filter drop down valikon */}
       <ExpensesFilter selected={filteredYear} onChangeFilter={filterHandler} />

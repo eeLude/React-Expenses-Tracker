@@ -4,10 +4,10 @@ import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
   return (
-    // luo "raamit" käyttäen muita komponentteja apuna johon data liitetään
+   //returns the date, title, and amount in a card component
 
     <Card className="expense-item">
-      <ExpenseDate date={props.date} />
+      <ExpenseDate date={props.date} /> 
       <div className="expense-item__description">
         <h2>{props.title}</h2>
         <div className="expense-item__price">${props.amount}</div>
