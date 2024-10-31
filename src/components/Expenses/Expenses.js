@@ -8,7 +8,7 @@ import ExpensesChart from "./ExpensesChart";
 const Expenses = (props) => {
   
   //state hook to store the selected year
-  const [filteredYear, setFilteredYear] = useState("2022"); 
+  const [filteredYear, setFilteredYear] = useState("2024"); 
 
   //event handler for the filter drop down
   const filterHandler = (selectedYear) => {

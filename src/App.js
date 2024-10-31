@@ -15,13 +15,13 @@ const dummy_expenses = [
     id: "e3",
     title: "Car Insurance",
     amount: 300.0,
-    date: new Date("2023-01-01"),
+    date: new Date("2024-05-01"),
   },
   {
     id: "e4",
     title: "New Desk (Wooden)",
     amount: 450,
-    date: new Date("2023-01-09"),
+    date: new Date("2024-01-09"),
   },
 ];
 
