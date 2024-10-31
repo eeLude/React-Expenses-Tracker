@@ -15,15 +15,16 @@ const NewExpense = (props) => {
     setIsEditing(false);
   };
 
-  //eventhandler to render user input
+  //function to save the expense data
   const SaveExpenseDataHandler = (enteredExpenseData) => {
-    const expenseData = {
+    const expenseData = { //create object with entered data
       ...enteredExpenseData,
       id: Math.random().toString(), //add id to data object
     };
-    props.onAddExpense(expenseData);
+    props.onAddExpense(expenseData); //pass the data to the parent component
   };
 
+  //if not editing, return a button to add new expense
   if (isEditing === false) {
     return (
       <div className="new-expense">
@@ -34,12 +35,13 @@ const NewExpense = (props) => {
     );
   }
 
+  //if editing, return the form
   if (isEditing === true) {
     return (
       <div className="new-expense">
         <ExpenseForm
-          onSaveExpenseData={SaveExpenseDataHandler}
-          onCancel={stopEditingHandler}
+          onSaveExpenseData={SaveExpenseDataHandler} //pass the function to save the data
+          onCancel={stopEditingHandler} //pass the function to cancel the form
         />
       </div>
     );

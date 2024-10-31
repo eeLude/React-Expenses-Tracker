@@ -7,7 +7,7 @@ const ExpensesList = (props) => {
   }
 
   return (
-    //map through the expenses and return an ExpenseItem component for each expense
+    //maps through the expenses and return an ExpenseItem component for each expense
     <div className="expenses-list">
       {props.items.map((expense) => (
         <ExpenseItem
@@ -20,4 +20,5 @@ const ExpensesList = (props) => {
     </div>
   );
 };
+
 export default ExpensesList;
